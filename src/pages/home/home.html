@@ -6,9 +6,49 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+
+<ion-content>
+ 
+<form [formGroup]="sup" (ngSubmit) ="supForm()">
+
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input [(ngModel)]="username"  type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <p>Username is required</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input [(ngModel)]="password" type="password" formContolName="password"></ion-input>
+    </ion-item>
+
+
+    <!-- String interpolation
+<div>
+  {{value1+value2}}
+</div> -->
+
+<!-- <div *ngIf="value3">
+  {{value1+value2}}
+</div>  -->
+
+<!-- <div *ngFor="let item of list" [style.background-color]="red">
+{{item}}
+</div> -->
+
+
+</form>
+
+  <div padding>
+    <button (click)="submit()" ion-button color="primary" block>Sign In</button>
+  </div>
+   <div>
+     username:{{username}}
+   </div>
+   <div>
+     password:{{pass}}
+   </div>
 </ion-content>
